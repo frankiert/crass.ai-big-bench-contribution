@@ -1,6 +1,6 @@
 # How to improve current LLM by utilizing counterfactual conditionals
 
-_Preliminary remark: This is part of a forthcoming paper, see: 
+_Preliminary remark: This is the draft for a forthcoming paper. It is in an early stage and in continuous development. Comments welcome._
 
 ## Abstract
 
@@ -31,7 +31,7 @@ tbd
 5.2. Execution<br>
 6. Evaluation<br>
 6.1. Fixed target model<br>
-6.2. Open Model<br>
+6.2. Open Scoring Model<br>
 7. Objections<br>
 8. Related Works<br>
 Footnotes<br>
@@ -39,7 +39,7 @@ References
 
 ## 1. Introduction
 
-After years of rapid development in AI technology in general and large language models (LLM) in particular, a certain puzzlement if not mild desperation started to creep in over the last years (Sutton et al. 2020:475; Marcus 2018; Roitblat 2020).<sup id="a1">[1](#f1)</sup> What if the ever growing models are good at generating text and information based on some large amount of training data without actually understanding a word they say (Mitchell 2019; AAAI-WHY 2019)? We would be living in a world of super-parrots and without being closer to a super intelligence or general intelligence, as it is called nowadays.<sup id="a2">[2](#f2)</sup> So what can be done? Many researchers suggested new approaches (such as including knowledge graps (Chaudhuri, Debanjan et al. 2021) or Bosselut et al. 2019;), some even going back to GOFAI rule-based systems (XXX). And though there is a lot to be learned and most certainly will there be progress come what may, the fundamental question is yet unanswered: How could we develop understanding and reasoning AI systems who would be able to generalize cross-domain and multi-modal (both are necessary though probably not sufficient conditions for attributing AIs the intelligence we look for)? Developing improved AI models, which are able to better 'understand' the world and reason accordingly as well as combine sensory data from multiple domains lies at the heart of this endeavor: But before one is able to go about this task, it is (at least always implicitly) known what progress 'is' in that particular area of research. And though there has been some headway into this thorny issue the general sentiment is, that although we kind of know what the result of this progress would look like in the end, we have no standardized test set by which we could measure how well we are doing (on the way) and how much still needs to be done. It is particularly out of this lack of tests and benchmarks that for instance Google AI and Open AI collectively initiated a hunt for such new test (XXX). So, even if we currently do not have a perfect and working solution on how to solve the problem in general (Chollet 2019, p. 16f.), we would at least have some standard by which to judge new attempts.
+After years of rapid development in AI technology in general and large language models (LLM) in particular, a certain puzzlement if not mild desperation started to creep in over the last years (Sutton et al. 2020:475; Marcus 2018; Roitblat 2020).<sup id="a1">[1](#f1)</sup> What if the ever growing models are good at generating text and information based on some large amount of training data without actually understanding a word they say (Mitchell 2019; AAAI-WHY 2019)? We would be living in a world of super-parrots and without being closer to a super intelligence or general intelligence, as it is called nowadays.<sup id="a2">[2](#f2)</sup> So what can be done? Many researchers suggested new approaches (for example including knowledge graphs (Chaudhuri et al. 2021; Bosselut et al. 2019; Agarwal 2021), some reintroducing rule-based systems (Krötzsch 2019). And though there is a lot to be learned and most certainly will there be progress come what may, the fundamental question is yet unanswered: How could we develop understanding and reasoning AI systems who would be able to generalize cross-domain and multi-modal (both are necessary though probably not sufficient conditions for attributing AIs the intelligence we look for)? Developing improved AI models, which are able to better 'understand' the world and reason accordingly as well as combine sensory data from multiple domains lies at the heart of this endeavor: But before one is able to go about this task, it is (at least always implicitly) known what progress 'is' in that particular area of research. And though there has been some headway into this thorny issue the general sentiment is, that although we kind of know what the result of this progress would look like in the end, we have no standardized test set by which we could measure how well we are doing (on the way) and how much still needs to be done. It is particularly out of this lack of tests and benchmarks that for instance Google AI and Open AI collectively initiated a hunt for such new tests (Colin et al. 2021). So, even if we currently do not have a perfect and working solution on how to solve the problem in general (Chollet 2019, p. 16f.), we would at least have some standard by which to judge new attempts.
 
 But, how to build a standardized benchmark for understanding and reasoning?<sup id="a3">[3](#f3)</sup> As many researchers have attempted and truly elucidated our understanding of how the human mind works (Pinker 1997; Fodor 1975, 1983; Searle 1992), we have no singular all encompassing notion of "understanding" and "reasoning". Followingly, some headway in this regard is of paramount interest. Although this work is not meant to be a final verdict or even close approximation to solving this complex issue it is the proclaimed goal of the presented project and work to make a substantial contribution in that area by utilizing so called counterfactual conditionals and more precisely questionized counterfactual conditionals (QCC). 
 
@@ -49,7 +49,7 @@ But, how to build a standardized benchmark for understanding and reasoning?<sup 
 
 Conditionals have been studied since ancient times and continue to be of paramount interest. Especially, in linguistics, logic and philosophy of language they started to be under much scrutiny since the mid-20th century, as they became a challenge for the ongoing shift from idealized truth-conditionals mainly applied to formal languages as construed by Frege, Carnap or Tarski to the application in regards to natural languages by Davidson or Montague (Harris 2017: p. 172f.). In carrying over the truth-functional approach to translate natural language statements into first order logic statements, they created countless puzzles as to how to interpret implicative, predictive, indicative or counterfactual conditionals (Geach 1962; Kamp 1981).
 
-Second of all, we are faced with a problem of definition and denomination [citation]. No one can really agree what those conditionals are besides the fact that it has something to do with a standard 'If-then' clause. But even that doesn't have to be the case in all instances. Not every If-then clause, is such a conditional. ("If you are the king of England, then I'm the Pope.")<sup id="a4">[4](#f4)</sup> And not every conditional is expressed via an If-then clause. ("Buy one, get one free.")
+Second of all, we are faced with a problem of definition and denomination (Egré and Cozic 2016: p. 492). No one can really agree what those conditionals are besides the fact that it has something to do with a standard 'If-then' clause. But even that doesn't have to be the case in all instances. Not every If-then clause, is such a conditional. ("If you are the king of England, then I'm the Pope.")<sup id="a4">[4](#f4)</sup> And not every conditional is expressed via an If-then clause. ("Buy one, get one free.")
 
 Thus, in the following discussion and LLM tasks whenever the word "conditional" is used, only a very narrow understanding of this word is meant to be applied. That is, any conditional thereafter is an **If then clause consisting of an antecedent and consequence** (relating two events). Just to be clear, there are many more possible ways to utilize an If-then clause many of them having no causal implication at all.
 
@@ -63,11 +63,11 @@ Because the antecedent is false 1a) is a **counterfactual** conditional. Counter
 
 "Considered as truth-functional compounds, all counterfactual [conditionals] are of course true, since their antecedents are false."
 
-The validity of truth functional analyses of counterfactual conditionals is not in the scope of this article. But it shall be mentioned that this observation can pose serious threats to LLM-reasoning as it is exactly this phenomenon why LLMs can easily be tricked into generating or answering absolute rubbish when fed counter-to-fact propositions (XXX). We believe further research is needed to elevate LLMs beyond the point of truth-functional computation of counterfactual conditionals resp. statements in general.
+The validity of truth functional analyses of counterfactual conditionals is not in the scope of this article. But it shall be mentioned that this observation can pose serious threats to LLM-reasoning as it is exactly this phenomenon why LLMs can easily be tricked into generating or answering absolute rubbish when fed counter-to-fact propositions (Wallace et al. 2019). We believe further research is needed to elevate LLMs beyond the point of truth-functional computation of counterfactual conditionals resp. statements in general.
 
 ### 2.3. Causality
 
-Causation is no singular well defined concept. The concept "causation" lumps together different intuitions, thoughts and observations humans have or make while coping with the proceedings of the world we live in (XXX). There have been multiple attempts to undergird causality with an at least somewhat unified theory. There are largely four attempts at doing so: The more or less classical regularity theory and three following attempts of dealing with the short comings of the former resp. of one-another: counterfactual theories, interventionist theories and probabilistic theories. But, none of these got universal acclaim or approval. 
+Causation is no singular well defined concept. The concept "causation" lumps together different intuitions, thoughts and observations humans have or make while coping with the proceedings of the world we live in since ancient times (Stein 2011). There have been multiple attempts to undergird causality with an at least somewhat unified theory. There are largely four attempts at doing so: The more or less classical regularity theory and three following attempts of dealing with the short comings of the former resp. of one-another: counterfactual theories (Lewis 1973), interventionist theories (Reutlinger 2013) and probabilistic theories (Eells 1991). But, none of these got universal acclaim or approval. 
 
 Contrary to what one might think, this study does not presuppose the counterfactual theory of causality. In fact it is completely agnostic in regards to the workings of causality as such and thus is compatible with all four of the aforementioned causality theories, though regularity theories being the least likely as their conceptualisation of causality is too sparse to support the rules governing QCCs (and this is precisely the reason why other theories exist). All we need for our current study is some kind of causal explanation available to the agent (which in turn can be framed in counterfactual, interventionist or probabilistic vocabulary).<sup id="a5">[5](#f5)</sup>
 
@@ -285,7 +285,7 @@ It’s important to notice that exchanging a verb might force exchange of the pr
 
 In order to put the so defined QCCs to use, we propose the construal of so called premise-counterfactual-tuples (PCT), which can be used to assess the performance of current LLMs by triggering a prompt answering the QCC. The most obvious AI model category allegedly suited for this are the Q&A models.<sup id="a8">[8](#f8)</sup> Unfortunately, not one Q&A LLM was able to answer the PCT because the premise had be  entered as the context prompting the AI to answer the QCC always with the (re)stating the premise itself, obviously showing no counterfactual reasoning at all.<sup id="a9">[9](#f9)</sup> Thus, we chose to employ the second best model category of LLM AIs: chatbots. Chatbots, at least the larger models, are trained in a manner to potentially answer a wide variety of questions, though some are more designed to fit a singular use case than others. For instance, that is the reason purely personal or dating styled chatbots (like kuki<sup id="a10">[10](#f10)</sup>) cannot be used in this study as they are so narrowly trained on an emotional interpersonal dialogue mimicking scenario such that they just won't reply to a QCC at all or continue asking "What's your hobby?".
 
-With chatbots it is possible to empirically test the assessment of the 'understanding' and 'reasoning' of an LLMs because compared to text-generation tasks at which large transformer architectures like GPT-3 excel, answering questions regarding the comparison of factual to hypothetical situations reveal the underlying grasp of reality, in other words how some authors like to call it its "groundedness", "pragmatism" or "tacit knowledge" (Fjelland 2020).
+With chatbots it is possible to empirically test the assessment of the 'understanding' and 'reasoning' of an LLMs because compared to text-generation tasks at which large transformer architectures like GPT-3 excel, answering questions regarding the comparison of factual to hypothetical situations reveal the underlying grasp of reality, in other words how some authors like to call it its "groundedness", "pragmatism" or "tacit knowledge" (Fjelland 2020; Bisk 2021).
 
 Though the mastering of cross-domain generalization is not directly examined in these tasks, the examples cover a wide variety of disciplines making it necessary to have a broad understanding of human as well as natural phenomena. The categories include broader and more colloquial branches such as "human society" and "physical dimensions and movements" (as we dubbed them) but include more specialized fields, as well, e.g.: psychology, biology, law, chemistry, physics, and geology as well. (As mentioned it would be easy to expand the tasks to include cross-domain generalization).
 
@@ -311,7 +311,7 @@ In the case of the fixed target model prefabricated PCTs are answered and assign
 
 For each PCT four possible answers are given ranging from highly probable to very unlikely as a correct answer thus the LLM has to judge adequately which answer is most suitable in the presented hypothetical situation (on top of understanding the underlying real world mechanisms at play). The answers are carefully crafted in order to ensure that a common sense understanding would predict with a high degree of certainty exactly this answer (if it were to be done by a human). To that end a short study was conducted in order to ensure the admissibility of the applied PCTs. With a final score of above 9X percent across all PCTs and individuals (see annex 2), we are confident that a low performance of an LLM on the task is exclusively attributable to the lack of understanding and reasoning capabilities of the LLM in question. An outcome which we would look forward to, as it first of all shows that the test worked correctly and second of all opens up room for improvement. And that is exactly what this task was designed for: Facilitating LLM AI improvement.
 
-#### 5.2.2. Open Model
+#### 5.2.2. Open Scoring Model
 
 Additionally we have created an open scoring model, which does not rely on the scoring of prefabricated answers but lets the LLM respond to the PCT directly with an answer of its choosing. To achieve that a REST API has been developed [https://www.crass.ai/documentation.php] which exposes the described PCTs so that they are accessible through a GET request which outputs a structured json file with the following exemplary content:
 
@@ -364,7 +364,7 @@ The submitted answers are stored in a database to make them available for classi
 
 In the fixed target model the calculation of the performance of an LLM is straight forward as every correct prediction can be used to increment a score by one adding up to a total score. This can finally be divided by the total number of predictions resulting in a percentage value indication performance and facilitating comparability.
 
-### 6.2. Open Model
+### 6.2. Open Scoring Model
 
 All result scores (rs) for one particular result (r) are the sum of a its respective correct classifications (rsc) against the sum of all classifications of this particular result (rsc+rsi) which in turn evenly contribute to the total score (ts) of an AI such that:
 
@@ -377,7 +377,7 @@ There is not one singular way to improve the universal application of LLMs but o
 
 First of all, it is by no means the goal of this task to test general AI, so judging it by this standard would be ill pursued. 
 
-But on a more moderate note the question does arise if anything meaningful is being tested by these tasks, as an LLM could so to say 'memorize' all potential courses of interaction of two objects on top of having all its properties stored. In that case this LLM would be just the fascinating parrot GPT3 (CIT) is without understanding a word it utters.
+But on a more moderate note the question does arise if anything meaningful is being tested by these tasks, as an LLM could so to say 'memorize' all potential courses of interaction of two objects on top of having all its properties stored. In that case this LLM would be just the fascinating parrot GPT3 is (Bender et al. 2021) without understanding a word it utters.
 
 To that objection two remarks shall be made. First, indeed to test LLMs thoroughly whether they can be claimed to be somewhat intelligent by more human standards, it would need to be able to transfer its learnt knowledge to different yet unknown domains and show it can generalize broadly and accurately, for instance demonstrating a firm grip of physics underlying the dynamic of liquids by transferring its laws and correctly predicting the behavior of solid objects. As suggested above, this improvement can be accommodated easily within the given framework.
 
@@ -391,6 +391,12 @@ And this must not provoke wonder as such an LLM probably achieved cross domain t
 
 Counterfactuals in AI
 It is not enough to mask, an object to reach counterfactuals wherever it was. It would have to be an alternative image. For instance, instead of holding a cat, a person would have have to hold a doc to make it the proper counterfactual mass counterfactuals in AI aren't are rarely true counterfactuals.
+
+First of all, there has been a steadily growing research regarding the application of the structural causal model presented by Judea Perl in AI (XXX - Priol et al. 2021; ...) Though not directly relevant to the project layed out in this paper, it nevertheless can, if such models are applied to LLMs, provide the basis for considerable imporvements in answering QCCs, as those models have the causal net necessary to answer QCCs baked right in.
+
+Of paramount interest is the research done by Bernhard Schölkopf and his colleagues. Over the years he relentlessly saught to establish a working theory of causal learning in AI. Though it hasn't been implemented on a larger scale it is an important contribution in order to make AI agents reason according to real world causal connections. And Schölkopf recently addressed several fundamental points LLMs have to get right and where a working causal model might or most certainly will help, recognizing the importance of counterfactual scenarios and questions:
+
+"Counterfactual problems involve reasoning about why things happened, imagining the consequences of different actions in hindsight, and determining which actions would have achieved the desired outcome. Answering counterfactual questions can be more difficult than answering interventional questions. However, this may be a key challenge for AI..." (Schölkopf et al. 2021: 615)
 
 Benchmarking
 
@@ -426,6 +432,7 @@ There have been several attempts at developing new benchmarks or better understa
 
 ## References
 
+
 * AAAI-WHY 2019: https://why19.causalai.net/
 * Marcus, Gary (2018): Deep Learning: A Critical Appraisal. arXiv:1801.00631 [cs.AI]
 * Marcus, Gary and Davis, Ernest (2019): Rebooting AI. Pantheon.
@@ -458,5 +465,40 @@ There have been several attempts at developing new benchmarks or better understa
 
 
 * von Fintel, Kai and Iatridou, Sabine (2020): Prolegomena to a theory of X-marking. ms, under review. URL: https://semanticsarchive.net/Archive/zdjYTJjY/fintel-iatridou-2020-x.pdf.
-* Copley, Bridget (2009):. Temporal Orientation in Conditionals. In. J. Guéron and J. Lecarme (Ed.), Time and Modality. Springer,59-77.
+* Copley, Bridget (2009): Temporal Orientation in Conditionals. In. J. Guéron and J. Lecarme (Ed.), Time and Modality. Springer,59-77.
 * Zhou, X. et al. (2020): Evaluating Commonsense in Pre-Trained Language Models. In: Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 9733-9740. https://doi.org/10.1609/aaai.v34i05.6523
+
+
+* Schölkopf 2021!
+* Priol 2021!
+
+
+* Agarwal, Oshin (2021): Knowledge Graph Based Synthetic Corpus Generation for Knowledge-Enhanced Language Model Pre-training. https://arxiv.org/abs/2010.12688
+* Krötzsch, Markus (2019): Too Much Information: Can AI Cope With Modern Knowledge Graphs? In: Diana Cristea, Florence Le Ber, Baris Sertkaya, eds., Proceedings of the 15th International Conference on Formal Concept Analysis, 17--31 https://iccl.inf.tu-dresden.de/web/Inproceedings3217
+* Colin, Raffel et al. (ed.) (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. https://iclr.cc/Conferences/2021/Schedule?showEvent=2147
+* Egré, Paul and Cozic, Mikaël (2009): Conditionals. In: Aloni, Maria and Dekker, Paul (eds.). Cambridge Handbook of Formal Semantics. Cambridge University Press, 490-524.
+* Wallace, Eric et al. (2019): Universal Adversarial Triggers for Attacking and Analyzing NLP. In: EMNLP 2019. https://arxiv.org/abs/1908.07125
+* Eells, Ellery (1991): Probabilistic Causality. Cambridge: Cambridge University Press.
+* Reutlinger Alexander (2013): The Interventionist Theory of Causation. In: A Theory of Causation in the Social and Biological Sciences. Palgrave Macmillan, London. https://doi.org/10.1057/9781137281043_2
+* Bender, Emily et al. (2021): On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In: FAccT '21, 610–623. https://doi.org/10.1145/3442188.3445922
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Not used:
+* Goodfellow, Ian et al. (2015): Explaining and Harnessing Adversarial Examples. In: ICLR 2015. https://arxiv.org/abs/1412.6572
+* Ilyas, Andrew et al. (2018): Black-box Adversarial Attacks with Limited Queries and Information. In: ICML 2018. https://arxiv.org/abs/1804.08598
