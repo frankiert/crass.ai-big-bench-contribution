@@ -457,68 +457,53 @@ Beyond that it would be highly interesting to combine the approach of Schölkopf
 ## References
 
 * AAAI-WHY 2019: https://why19.causalai.net/
-* Marcus, Gary (2018): Deep Learning: A Critical Appraisal. arXiv:1801.00631 [cs.AI]
-* Marcus, Gary and Davis, Ernest (2019): Rebooting AI. Pantheon.
-* Sutton, Robert and Barto, Andrew (2020): Reinforcement learning. Cambridge, Massachusetts. The MIT Press.
-* Roitblat, Herbert (2020): Algorithms Are Not Enough: Creating General Artificial Intelligence. Cambridge, Massachusetts. The MIT Press.
-* Mitchell, Melanie (2019): Artificial Intelligence Hits the Barrier of Meaning. In: Information 10(2), 51.
-* Ferrucci, David (2020): Can super-parrots ever achieve language understanding? https://medium.com/@ElementalCognition/can-super-parrots-ever-achieve-language-understanding-8307dfd3e87c
-* Yampolskiy, Roman (2020): Human ≠ AGI. arXiv:2007.07710 [cs.CY] https://arxiv.org/abs/2007.07710
-* Raffel, Colin; Roberts, Adam et al. (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. ICLR | 2021. https://welmworkshop.github.io/
+* Agarwal, Oshin (2021): Knowledge Graph Based Synthetic Corpus Generation for Knowledge-Enhanced Language Model Pre-training. https://arxiv.org/abs/2010.12688
+* Bender, Emily et al. (2021): On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In: FAccT '21, 610–623. https://doi.org/10.1145/3442188.3445922
+* Bisk, Yonatan (2020): Experience Grounds Language. https://arxiv.org/abs/2004.10151
 * Bosselut, Antoine; Rashkin, Hannah  (2019): ACL 2019. https://arxiv.org/abs/1906.05317 
-* Fjelland, Ragnar (2020): Why general artificial intelligence will not be realized. Humanities & Social Sciences Communications 7, 10. https://doi.org/10.1057/s41599-020-0494-4
+* Cartwright, Nancy 1999: Causal Diversity and the Markov Condition: In: Synthese 121, 3-27.
 * Chaudhuri, Debanjan et al. (2021): Grounding Dialogue Systems via Knowledge Graph Aware Decoding with Pre-trained Transformers. In: 18th International Conference, ESWC 2021, Virtual Event, June 6–10, 2021, Proceedings. https://arxiv.org/abs/2103.16289
-* Chollet, François (2019): On the Measure of Intelligence. https://arxiv.org/abs/1911.01547
-		* Thompson, Evans 1997: Symbol Grounding: A Bridge from Artificial Life to Artificial Intelligence In. Brain and Cognition 34, 48–71.
-* Steven Pinker 1997: How the Mind Works. New York, NY. W. W. Norton & Company.
+* Chollet, François (2019): On the Measure of Intelligence. https://arxiv.org/abs/1911.01
+* Cleland, Carol (1991): On the individuation of events. In: Synthese 86(2),229-254
+* Colin, Raffel et al. (ed.) (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. https://iclr.cc/Conferences/2021/Schedule?showEvent=2147
+* Copley, Bridget (2009): Temporal Orientation in Conditionals. In. J. Guéron and J. Lecarme (Ed.), Time and Modality. Springer,59-77.
+* Eells, Ellery (1991): Probabilistic Causality. Cambridge: Cambridge University Press.
+* Egré, Paul and Cozic, Mikaël (2009): Conditionals. In: Aloni, Maria and Dekker, Paul (eds.). Cambridge Handbook of Formal Semantics. Cambridge University Press, 490-524.
+* Ferrucci, David (2020): Can super-parrots ever achieve language understanding? https://medium.com/@ElementalCognition/can-super-parrots-ever-achieve-language-understanding-8307dfd3e87c
+* Fjelland, Ragnar (2020): Why general artificial intelligence will not be realized. Humanities & Social Sciences Communications 7, 10. https://doi.org/10.1057/s41599-020-0494-4
 * Fodor, Jerry 1975: The Language of Thought. New York. Crowell.
 * Fodor, Jerry 1983: The Modularity of Mind. Cambridge, Massachusetts. The MIT Press.
-* Searle, John 1992: The Rediscovery of the Mind. Cambridge, Massachusetts. The MIT Press.
-* Cartwright, Nancy 1999: Causal Diversity and the Markov Condition: In: Synthese 121, 3-27.
-* Stein, Nathanael (2011): Causation and Explanation in Aristotle. In: Philosophy Compass 6(10), 699-707.
-* Pearl, Judea (2000): Causality. Models, Reasoning, and Inference. Cambridge University Press.
-* Lewis, David (1973): Counterfactuals. Cambridge, Massachusetts: Harvard University Press.
-* Bisk, Yonatan (2020): Experience Grounds Language. https://arxiv.org/abs/2004.10151
-* Misselhorn, Catrin (2008): Kants Theorie der kontrafaktischen Variation modaler Intuitionen. In V. Rohden, R. Terra, G. Almeida & M. Ruffing (Ed.), Recht und Frieden in der Philosophie Kants, 527-538. Berlin, New York: De Gruyter.
-* Griffin, Michael (1999): Leibniz on God's Knowledge of Counterfactuals. In: The Philosophical Review 108 (3), 317-343.
 * Geach, Peter (1981): Reference and Generality. Ithaca. Cornell Univ. Press.
-* Kamp, Hans (1981): A Theory of Truth and Semantic Representation. In: J. Groenendijk nd T. Janssen and M. Stokhof (Ed.), Formal Methods in the Study of Language. Amsterdam. Mathematisch Centrum, 277-322. 
-* Priol, Remi Le (2021): An Analysis of the Adaptation Speed of Causal Models. https://arxiv.org/abs/2005.09136
-* Schölkopf, Bernhard (2021): Towards Causal Representation Learning. https://arxiv.org/abs/2102.11107
-* Shahid, Usman (2021): Counterfactual learning in networks: an empirical study of model dependence. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjRlO707bzxAhX2gP0HHcdeCbsQFjACegQIChAD&url=https%3A%2F%2Fwww.cs.uic.edu%2F~elena%2Fpubs%2Fshahid-why19.pdf&usg=AOvVaw0iXfK37FoziyqbpqKHwQrZ
-
-
-
-
-* von Fintel, Kai and Iatridou, Sabine (2020): Prolegomena to a theory of X-marking. ms, under review. URL: https://semanticsarchive.net/Archive/zdjYTJjY/fintel-iatridou-2020-x.pdf.
-* Copley, Bridget (2009): Temporal Orientation in Conditionals. In. J. Guéron and J. Lecarme (Ed.), Time and Modality. Springer,59-77.
-* Zhou, X. et al. (2020): Evaluating Commonsense in Pre-Trained Language Models. In: Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 9733-9740. https://doi.org/10.1609/aaai.v34i05.6523
-
-
-
-
-
-* Agarwal, Oshin (2021): Knowledge Graph Based Synthetic Corpus Generation for Knowledge-Enhanced Language Model Pre-training. https://arxiv.org/abs/2010.12688
-* Krötzsch, Markus (2019): Too Much Information: Can AI Cope With Modern Knowledge Graphs? In: Diana Cristea, Florence Le Ber, Baris Sertkaya, eds., Proceedings of the 15th International Conference on Formal Concept Analysis, 17--31 https://iccl.inf.tu-dresden.de/web/Inproceedings3217
-* Colin, Raffel et al. (ed.) (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. https://iclr.cc/Conferences/2021/Schedule?showEvent=2147
-* Egré, Paul and Cozic, Mikaël (2009): Conditionals. In: Aloni, Maria and Dekker, Paul (eds.). Cambridge Handbook of Formal Semantics. Cambridge University Press, 490-524.
-* Wallace, Eric et al. (2019): Universal Adversarial Triggers for Attacking and Analyzing NLP. In: EMNLP 2019. https://arxiv.org/abs/1908.07125
-* Eells, Ellery (1991): Probabilistic Causality. Cambridge: Cambridge University Press.
-* Reutlinger Alexander (2013): The Interventionist Theory of Causation. In: A Theory of Causation in the Social and Biological Sciences. Palgrave Macmillan, London. https://doi.org/10.1057/9781137281043_2
-* Bender, Emily et al. (2021): On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In: FAccT '21, 610–623. https://doi.org/10.1145/3442188.3445922
-* Wetzel, Lina (2008): Types and Tokens: An Essay on Universals. Cambridge, Massachusetts. The MIT Press.
-
-* Cleland, Carol (1991): On the individuation of events. In: Synthese 86(2),229-254
+* Griffin, Michael (1999): Leibniz on God's Knowledge of Counterfactuals. In: The Philosophical Review 108 (3), 317-343.
 * Hausman, Daniel (2005): Causal Relata: Tokens, Types, or Variables? In: Erkenntnis 63(1), 33-54.
-* Lombard, Lawrence (1986): Events. A Metaphysical Study. Routledge & Kegan Paul, London.
-
-
+* Kamp, Hans (1981): A Theory of Truth and Semantic Representation. In: J. Groenendijk nd T. Janssen and M. Stokhof (Ed.), Formal Methods in the Study of Language. Amsterdam. Mathematisch Centrum, 277-322. 
+* Krötzsch, Markus (2019): Too Much Information: Can AI Cope With Modern Knowledge Graphs? In: Diana Cristea, Florence Le Ber, Baris Sertkaya, eds., Proceedings of the 15th International Conference on Formal Concept Analysis, 17--31 https://iccl.inf.tu-dresden.de/web/Inproceedings3217
+* Lewis, David (1973): Counterfactuals. Cambridge, Massachusetts: Harvard University Press.
 * Liang, Zujie (2020): Learning to Contrast the Counterfactual Samples for Robust Visual Question Answering. https://www.aclweb.org/anthology/2020.emnlp-main.265/
-* Teney, Damien (2020): Learning What Makes a Difference from Counterfactual Examples and Gradient Supervision. https://arxiv.org/abs/2004.09034
-
-* Pearl, Judea (2011): The algorithmization of counterfactuals. In: Annals for Mathematics and Artificial Intelligence 61(1),29-39.
+* Lombard, Lawrence (1986): Events. A Metaphysical Study. Routledge & Kegan Paul, London.
+* Marcus, Gary (2018): Deep Learning: A Critical Appraisal. arXiv:1801.00631 [cs.AI]
+* Marcus, Gary and Davis, Ernest (2019): Rebooting AI. Pantheon.
+* Misselhorn, Catrin (2008): Kants Theorie der kontrafaktischen Variation modaler Intuitionen. In V. Rohden, R. Terra, G. Almeida & M. Ruffing (Ed.), Recht und Frieden in der Philosophie Kants, 527-538. Berlin, New York: De Gruyter.
+* Mitchell, Melanie (2019): Artificial Intelligence Hits the Barrier of Meaning. In: Information 10(2), 51.
 * Oh, Jong-Hoon et al. (2013): Why-question answering using intra-and inter-sentential causal relations. In: Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics,1733-1743.
 * Oh, Jong-Hoon et al. (2017): Multi-column convolutional neural networks with causality-attention for why-question answering. Proceedings of the Tenth ACM International Conference on Web Search and Data Mining, 415-424.
-
-
+* Pearl, Judea (2000): Causality. Models, Reasoning, and Inference. Cambridge University Press.
+* Pearl, Judea (2011): The algorithmization of counterfactuals. In: Annals for Mathematics and Artificial Intelligence 61(1),29-39.
+* Priol, Remi Le (2021): An Analysis of the Adaptation Speed of Causal Models. https://arxiv.org/abs/2005.09136
+* Raffel, Colin; Roberts, Adam et al. (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. ICLR | 2021. https://welmworkshop.github.io/
+* Reutlinger Alexander (2013): The Interventionist Theory of Causation. In: A Theory of Causation in the Social and Biological Sciences. Palgrave Macmillan, London. https://doi.org/10.1057/9781137281043_2
+* Roitblat, Herbert (2020): Algorithms Are Not Enough: Creating General Artificial Intelligence. Cambridge, Massachusetts. The MIT Press.
+* Schölkopf, Bernhard (2021): Towards Causal Representation Learning. https://arxiv.org/abs/2102.11107
+* Searle, John 1992: The Rediscovery of the Mind. Cambridge, Massachusetts. The MIT Press.
+* Shahid, Usman (2021): Counterfactual learning in networks: an empirical study of model dependence. https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjRlO707bzxAhX2gP0HHcdeCbsQFjACegQIChAD&url=https%3A%2F%2Fwww.cs.uic.edu%2F~elena%2Fpubs%2Fshahid-why19.pdf&usg=AOvVaw0iXfK37FoziyqbpqKHwQrZ
+* Stein, Nathanael (2011): Causation and Explanation in Aristotle. In: Philosophy Compass 6(10), 699-707.
+* Steven Pinker 1997: How the Mind Works. New York, NY. W. W. Norton & Company.
+* Sutton, Robert and Barto, Andrew (2020): Reinforcement learning. Cambridge, Massachusetts. The MIT Press.
+* Teney, Damien (2020): Learning What Makes a Difference from Counterfactual Examples and Gradient Supervision. https://arxiv.org/abs/2004.09034
+* Thompson, Evans 1997: Symbol Grounding: A Bridge from Artificial Life to Artificial Intelligence In. Brain and Cognition 34, 48–71.
+* von Fintel, Kai and Iatridou, Sabine (2020): Prolegomena to a theory of X-marking. ms, under review. URL: https://semanticsarchive.net/Archive/zdjYTJjY/fintel-iatridou-2020-x.pdf.
+* Wallace, Eric et al. (2019): Universal Adversarial Triggers for Attacking and Analyzing NLP. In: EMNLP 2019. https://arxiv.org/abs/1908.07125
+* Wetzel, Lina (2008): Types and Tokens: An Essay on Universals. Cambridge, Massachusetts. The MIT Press.
+* Yampolskiy, Roman (2020): Human ≠ AGI. arXiv:2007.07710 [cs.CY] https://arxiv.org/abs/2007.07710
+* Zhou, X. et al. (2020): Evaluating Commonsense in Pre-Trained Language Models. In: Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 9733-9740. https://doi.org/10.1609/aaai.v34i05.6523
 
