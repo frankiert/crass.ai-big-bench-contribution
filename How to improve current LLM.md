@@ -1,4 +1,5 @@
 # How to improve current LLM by utilizing counterfactual conditionals
+b< Jörg Frohberg, Frank Binder
 
 _Preliminary remark: This is the draft for a forthcoming paper. It is in an early stage and in continuous development. Comments welcome._
 
@@ -428,6 +429,10 @@ As indicated there is great potential to improve and extent the provided classif
 Beyond that it, would be highly interesting to combine the approach of Schölkopf with the research done by Jong-hoon Oh (Oh et al. 2013; Oh et al. 2017) and his colleagues to extract causal structured data from existing language corpora. In case of feasability this might be of high value for improving LLMs specifically applying such structured information.
 
 ## Footnotes
+
+<b id="a">a</b>Research Director at apergo.ai(#a)
+
+<b id="b">b</b>InfAI (Institute for applied informatics at University of Leipzig)(#b)
 
 <b id="f1">1</b> https://www.technologyreview.com/2020/07/31/1005876/natural-language-processing-evaluation-ai-opinion/[↩](#a1)
 
