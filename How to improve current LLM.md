@@ -1,5 +1,5 @@
 # How to improve current LLM by utilizing counterfactual conditionals
-b< Jörg Frohberg, Frank Binder
+*Jörg Frohberg<sup id="a">[a](#fa)</sup>, Frank Binder<sup id="b">[b](#fb)</sup>*
 
 _Preliminary remark: This is the draft for a forthcoming paper. It is in an early stage and in continuous development. Comments welcome._
 
@@ -430,11 +430,11 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 
 ## Footnotes
 
-<b id="a">a</b>Research Director at apergo.ai(#a)
+<b id="fa">a</b>Research Director at apergo.ai[↩](#a)
 
-<b id="b">b</b>InfAI (Institute for applied informatics at University of Leipzig)(#b)
+<b id="fb">b</b>InfAI (Institute for applied informatics at University of Leipzig)[↩](#b)
 
-<b id="f1">1</b> https://www.technologyreview.com/2020/07/31/1005876/natural-language-processing-evaluation-ai-opinion/[↩](#a1)
+<b id="f1">1</b> https://www.technologyreview.com/2020/07/31/1005876/natural-language-processing-evaluation-ai-opinion/.[↩](#a1)
 
 <b id="f2">2</b> The term artificial general intelligence (AGI), super intelligence and the like are under much scrutiny from many scholars, as they've intelligibly argued that there is not 'one' general intelligence and esp. humans are very domain specific intelligent beings (Yampolskiy 2020).[↩](#a2)
 
