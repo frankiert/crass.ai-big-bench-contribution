@@ -396,24 +396,28 @@ And this must not provoke wonder as such an LLM probably achieved cross domain t
 ## 8. Related Works
 
 
-Counterfactuals have been mentioned in passing in LLM resp. AI research throughout the last two decades. But in the light of recent developments interest started to increase. One can identifiy roughly four somewhat independent strands in the literature.
+Counterfactuals have been mentioned in passing in LLM resp. AI research throughout the last two decades. But in the light of recent developments interest started to increase. One can identifiy roughly five somewhat independent (but at the end interrelated) strands in the literature.
 
 ### 8.1. Counterfactuals in image recognition and processing
 
 In the last two years several authors used 'counterfactuals' in image recognition and processing oriented work (see Teney 2020; Liang 2020). For them counterfactuality has a broader application as their prime examples consist of removing a depicted object in an image. But, it is not enough to mask an object to reach a counterfactual. It would have to be an alternative image. For instance, instead of holding a cat, a person would have have to hold a dog to make it a proper counterfactual.
 
-### 8.2. Counterfactuals in structural causal models
+### 8.2. Counterfactuals in structural causal models (SCM)
 
-There has been a steadily growing research regarding the application of the structural causal model presented by Judea Perl (Pearl 2000; Pearl 2011) Though not directly relevant to the project layed out in this paper, it nevertheless can, if such models are applied to LLMs, provide the basis for considerable improvements in answering QCCs, as those models have the causal net necessary to answer QCCs baked right in.
+There has been a steadily growing research regarding the application of the SCM presented by Judea Perl (Pearl 2000; Peters 2017; Bareinboim 2020) Though not directly relevant to the project layed out in this paper, it nevertheless can, if such models are applied to LLMs, provide the basis for considerable improvements in answering QCCs, as those models have the causal net necessary to answer QCCs baked right in.
 
 
 ### 8.3. Counterfactuals in network and graph models
 
 Furthermore, some researchers use some version of counterfactual analysis in network and graph models (Shahid 2021; Priol 2021).
 
-### 8.4. Counterfactual in Causal Learning
+### 8.4. Counterfactuals in Counterfactual Explanations (CFE)
 
-Of paramount interest is the research done by Bernhard Schölkopf and his colleagues (somewhat combining both aforementioned fields). Over the years they relentlessly sought to establish a working theory of causal learning in AI. Though it hasn't been implemented on a larger scale it is an important contribution in order to make AI agents reason according to real world causal connections. And Schölkopf recently addressed several fundamental points LLMs have to get right and where a working causal model might or most certainly will help, recognizing the importance of counterfactual scenarios and questions:
+CFE is a special field which tries to find the shortest path to an alternative set of data points which would cause the model to change the calculated prediction, for instance switching in a classifying task from "rejection" to "admission" (Wachter et al. 2017). This field is largely concerned with explainable AI, as it is becoming more and more important in real world application to show users why this or that classification occured and what alteration they would have needed to make in order to make the AI change predictions (Verma et al. 2020; Pawelczyk et al. 2021).
+
+### 8.5. Counterfactual in Causal Learning
+
+Of paramount interest is the research done by Bernhard Schölkopf and his colleagues (somewhat combining the three aforementioned fields). Over the years they relentlessly sought to establish a working theory of causal learning in AI. Though it hasn't been implemented on a larger scale it is an important contribution in order to make AI agents reason according to real world causal connections. And Schölkopf recently addressed several fundamental points LLMs have to get right and where a working causal model might or most certainly will help, recognizing the importance of counterfactual scenarios and questions:
 
 >"Counterfactual problems involve reasoning about why things happened, imagining the consequences of different actions in hindsight, and determining which actions would have achieved the desired outcome. Answering counterfactual questions can be more difficult than answering interventional questions. However, this may be a key challenge for AI..." (Schölkopf et al. 2021, 615)
 
@@ -489,7 +493,6 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 * Oh, Jong-Hoon et al. (2013): Why-question answering using intra-and inter-sentential causal relations. In: Proceedings of the 51st Annual Meeting of the Association for Computational Linguistics,1733-1743.
 * Oh, Jong-Hoon et al. (2017): Multi-column convolutional neural networks with causality-attention for why-question answering. Proceedings of the Tenth ACM International Conference on Web Search and Data Mining, 415-424.
 * Pearl, Judea (2000): Causality. Models, Reasoning, and Inference. Cambridge University Press.
-* Pearl, Judea (2011): The algorithmization of counterfactuals. In: Annals for Mathematics and Artificial Intelligence 61(1),29-39.
 * Priol, Remi Le (2021): An Analysis of the Adaptation Speed of Causal Models. https://arxiv.org/abs/2005.09136
 * Raffel, Colin et al. (ed.) (2021): Workshop on Enormous Language Models: Perspectives and Benchmarks. ICLR | 2021. https://iclr.cc/Conferences/2021/Schedule?showEvent=2147
 * Reutlinger Alexander (2013): The Interventionist Theory of Causation. In: A Theory of Causation in the Social and Biological Sciences. Palgrave Macmillan, London. https://doi.org/10.1057/9781137281043_2
@@ -514,4 +517,9 @@ Learning, Stockholm, Sweden, PMLR 80.
 * Rabinowitz, Neil (2018): Machine Theory of Mind. https://arxiv.org/abs/1802.07740
 * Hawkins, Jeff (2021): A Thousand Brains: A New Theory of Intelligence. Basic Books.
 * Talmor, Alon et al. (2021): CommonsenseQA 2.0: Exposing the Limits of AI through Gamification. In: Submitted to the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) Track on Datasets and Benchmarks. https://openreview.net/forum?id=qF7FlUT5dxa
- 
+* Pawelczyk, Martin et al. (2021): On the Connections between Counterfactual Explanations and Adversarial Examples. https://arxiv.org/abs/2106.09992
+* Karimi, Amir-Hossein et al. (2020): Model-agnostic counterfactual explanations for consequential decisions. In: International Conference on Artificial Intelligence and Statistics, pages 895–905. PMLR 2020.
+* Verma, Sahil et al. (2020): Counterfactual Explanations for Machine Learning: A Review. https://arxiv.org/abs/2010.10596
+* Wachter, Sandra et al.(2017): Counterfactual Explanations Without Opening the Black Box. Automated Decisions and the GDPR. SSRN Electronic Journal 31(2),842–887.
+* Peters, Jonas et al. (2017): Elements of Causal Inference. Foundations and Learning Algorithms. Cambridge, Massachusetts. The MIT Press.
+* Bareinboim, Elias et al. (2020): On Pearl’s Hierarchy and the Foundations of Causal Inference. https://causalai.net/r60.pdf [Online;accessed 5-Feb-2021]
