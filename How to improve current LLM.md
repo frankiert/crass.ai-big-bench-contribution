@@ -48,7 +48,7 @@ References
 
 After years of rapid development in AI technology in general and large language models (LLM) in particular, a certain puzzlement if not mild desperation started to creep in over the last years (Sutton et al. 2020, 475; Marcus 2018; Roitblat 2020).<sup id="a1">[1](#f1)</sup> What if the ever growing models are good at generating text and information based on some large amount of training data without actually understanding a word they say (Mitchell 2019; AAAI-WHY 2019)? We would be living in a world of super-parrots without being closer to general intelligence.<sup id="a2">[2](#f2)</sup> So what can be done? Many researchers suggested new approaches, for example including knowledge graphs (Chaudhuri et al. 2021; Bosselut et al. 2019; Agarwal 2021), some reintroducing rule-based systems (Krötzsch 2019). And though there is a lot to be learned and most certainly will there be progress come what may, the fundamental question is yet unanswered: How could we develop understanding and reasoning AI systems who would be able to generalize cross-domain and multi-modal (both are necessary though probably not sufficient conditions for attributing AIs the intelligence we look for)? Developing improved AI models, which are able to better 'understand' the world and reason accordingly as well as combine sensory data from multiple domains lies at the heart of this endeavor. But before one is able to go about this task, it is (at least always implicitly) known what progress 'is' in that particular area of research. And though there has been some headway into this thorny issue the general sentiment is, that although we kind of know what the result of this progress would look like in the end, we have no standardized test set by which we could measure how well we are doing (on the way) and how much still needs to be done. It is particularly out of this lack of tests and benchmarks that for instance Google AI and Open AI collectively initiated a hunt for such new tests (Colin et al. 2021). So, even if we currently do not have a perfect and working solution on how to solve the problem in general (Chollet 2019, 16f.), we would at least have some standard by which to judge new attempts.
 
-But, how to build a standardized benchmark for understanding and reasoning?<sup id="a3">[3](#f3)</sup> As many researchers have attempted and truly elucidated our understanding of how the human mind works (Pinker 1997; Fodor 1975, 1983; Searle 1992), we have no singular all encompassing concept of the concepts named "understanding" and "reasoning" in a very practical and testable measure going beyond classic intelligence tests (XXX) or emotional intelligence test (XXX) which LLMs are by now are solving without effort. Nevertheless, we wouldn't call those models 'reasoning' in any meaningful manner. Followingly, some headway in this regard is of paramount interest. Although this work is not meant to be a final verdict or even close approximation to solving this complex issue it is the proclaimed goal of the presented project and work to make a substantial contribution in that area by utilizing so called counterfactual conditionals and more precisely questionized counterfactual conditionals (QCC). 
+But, how to build a standardized benchmark for understanding and reasoning? As many researchers have attempted and truly elucidated our understanding of how the human mind works (Fodor 1975; Fodor 1983; Searle 1992; Pinker 1997; Hawkins 2021),<sup id="a3">[3](#f3)</sup> we have no singular all encompassing concept of the concepts named "understanding" and "reasoning" in an applicable, practical and testable measure - going beyond classic IQ tests (Barrett 2018). And although there has been progress and partially impressive results hinted towards reasoning capabilities in neural nets esp. in games (Vinyals 2019; Rabinowitz 2018), it cannot be said that reasoning is understood let alone 'solved' in any meaningful manner as many challenges and test continue to remain out of reach (Chollet 2019, Weili 2020, Talmor 2021) for current AI systems (be it LLMs or otherwise). Followingly, some headway in this regard is of paramount interest. Although this work is not meant to be a final verdict or even close approximation to solving this complex issue it is the proclaimed goal of the presented project and work to make a substantial contribution in that area by utilizing so called counterfactual conditionals and more precisely questionized counterfactual conditionals (QCC). 
 
 ## 2.Applied Concepts
 
@@ -174,7 +174,7 @@ There are countless ways to elaborate on our premise base model and further rese
 
 
 
-###  3.5. Questionized Counterfactual Condtionals
+### 3.5. Questionized Counterfactual Condtionals
 
 Now, we are in the position to put it all together. After having laid the ground to formulate valid counterfactual conditionals we can turn them into questions such that an LLM can respond with a proper answer. The QCCs always have the form of:
 
@@ -365,7 +365,6 @@ These data can be used to input into an LLM. The crass.ai API in turn provides t
 The submitted answers are stored in a database to make them available for classification. To that end an interface has been developed exposing the PCTs with a matching LLM-answer to be classified as correct or incorrect by human agents. Each answer is exposed at least 20 times. As soon as an agreement of 0.95 is reached on the classification as a correct or incorrect answer (meaning out of 20 classifications there can be one deviation) the score for this particular result entry is finalized and will not be displayed anymore. If no agreement is reached regarding the correctness or incorrectness of an answer the processing is discontinued after the completion of the 50th scoring. The resulting score at that point is finalized and can't be changed anymore.
 
 
-
 ## 6. Evaluation
 
 ### 6.1. Fixed target model
@@ -430,7 +429,7 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 
 ## Footnotes
 
-<b id="fa">a</b>Research Director at apergo.ai[↩](#a)
+<b id="fa">a</b>apergo.ai[↩](#a)
 
 <b id="fb">b</b>InfAI (Institute for applied informatics at University of Leipzig)[↩](#b)
 
@@ -438,7 +437,7 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 
 <b id="f2">2</b> The term artificial general intelligence (AGI), super intelligence and the like are under much scrutiny from many scholars, as they've intelligibly argued that there is not 'one' general intelligence and esp. humans are very domain specific intelligent beings (Yampolskiy 2020).[↩](#a2)
 
-<b id="f3">3</b> To be fair, there are already some attempts to get general reasoning tests for AI right. See Chollet 2019.[↩](#a3)
+<b id="f3">3</b> This is just a basic selection and could be extended ad infinitum as these works are at the heart of a vast research field fuzzily described as cognitive psychology, computational psychology or more broadly computational cognitive science or neurosience.[↩](#a3)
 
 <b id="f3">4</b> In many instances If-then clauses are employed in an illustrating, contrasting or figure-of-speech manner.[↩](#a4)
 
@@ -466,12 +465,11 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 * Agarwal, Oshin (2021): Knowledge Graph Based Synthetic Corpus Generation for Knowledge-Enhanced Language Model Pre-training. https://arxiv.org/abs/2010.12688
 * Bender, Emily et al. (2021): On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? In: FAccT '21, 610–623. https://doi.org/10.1145/3442188.3445922
 * Bisk, Yonatan (2020): Experience Grounds Language. https://arxiv.org/abs/2004.10151
-* Bosselut, Antoine; Rashkin, Hannah  (2019): ACL 2019. https://arxiv.org/abs/1906.05317 
+* Bosselut, Antoine; Rashkin, Hannah (2019): ACL 2019. https://arxiv.org/abs/1906.05317 
 * Cartwright, Nancy 1999: Causal Diversity and the Markov Condition: In: Synthese 121, 3-27.
 * Chaudhuri, Debanjan et al. (2021): Grounding Dialogue Systems via Knowledge Graph Aware Decoding with Pre-trained Transformers. In: 18th International Conference, ESWC 2021, Virtual Event, June 6–10, 2021, Proceedings. https://arxiv.org/abs/2103.16289
 * Chollet, François (2019): On the Measure of Intelligence. https://arxiv.org/abs/1911.01
 * Cleland, Carol (1991): On the individuation of events. In: Synthese 86(2),229-254
-
 * Copley, Bridget (2009): Temporal Orientation in Conditionals. In. J. Guéron and J. Lecarme (Ed.), Time and Modality. Springer,59-77.
 * Eells, Ellery (1991): Probabilistic Causality. Cambridge: Cambridge University Press.
 * Egré, Paul and Cozic, Mikaël (2009): Conditionals. In: Aloni, Maria and Dekker, Paul (eds.). Cambridge Handbook of Formal Semantics. Cambridge University Press, 490-524.
@@ -508,4 +506,12 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 * Wetzel, Lina (2008): Types and Tokens: An Essay on Universals. Cambridge, Massachusetts. The MIT Press.
 * Yampolskiy, Roman (2020): Human ≠ AGI. arXiv:2007.07710 [cs.CY] https://arxiv.org/abs/2007.07710
 * Zhou, X. et al. (2020): Evaluating Commonsense in Pre-Trained Language Models. In: Proceedings of the AAAI Conference on Artificial Intelligence, 34(05), 9733-9740. https://doi.org/10.1609/aaai.v34i05.6523
-
+* 
+* Barrett, David et al. (2018): Measuring abstract reasoning in neural networks. In: Proceedings of the 35 th International Conference on Machine
+Learning, Stockholm, Sweden, PMLR 80.
+* Vinyals, Oriol et al. (2019): AlphaStar: Mastering the Real-Time Strategy Game StarCraft II. https://deepmind.com/blog/alphastar-mastering-real-time-strategy-game-starcraft-ii/
+* Weili, Nie (2020): Bongard-LOGO: A New Benchmark for Human-Level Concept Learning and Reasoning. In: 34th Conference on Neural Information Processing Systems (NeurIPS 2020), Vancouver, Canada.
+* Rabinowitz, Neil (2018): Machine Theory of Mind. https://arxiv.org/abs/1802.07740
+* Hawkins, Jeff (2021): A Thousand Brains: A New Theory of Intelligence. Basic Books.
+* Talmor, Alon et al. (2021): CommonsenseQA 2.0: Exposing the Limits of AI through Gamification. In: Submitted to the 35th Conference on Neural Information Processing Systems (NeurIPS 2021) Track on Datasets and Benchmarks. https://openreview.net/forum?id=qF7FlUT5dxa
+ 
