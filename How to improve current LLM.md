@@ -437,7 +437,7 @@ Beyond that it, would be highly interesting to combine the approach of Schölkop
 
 <b id="fb">b</b>InfAI (Institute for applied informatics at University of Leipzig)[↩](#b)
 
-<b id="f1">1</b> https://www.technologyreview.com/2020/07/31/1005876/natural-language-processing-evaluation-ai-opinion/.[↩](#a1)
+<b id="f1">1</b> https://www.technologyreview.com/2020/07/31/1005876/natural-language-processing-evaluation-ai-opinion/ .[↩](#a1)
 
 <b id="f2">2</b> The term artificial general intelligence (AGI), super intelligence and the like are under much scrutiny from many scholars, as they've intelligibly argued that there is not 'one' general intelligence and esp. humans are very domain specific intelligent beings (Yampolskiy 2020).[↩](#a2)
 
